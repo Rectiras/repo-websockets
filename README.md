@@ -14,7 +14,7 @@ This file contains the Tornado WebSocket server. It listens for incoming message
 
 ### Prerequisites
 
-1. git clone <https://github.com/Rectiras/repo-websockets.git>
+1. `git clone <https://github.com/Rectiras/repo-websockets.git>`
 2. cd repo-websockets
 3. Make sure Python installed on your system.
 4. pip install -r requirements.txt
