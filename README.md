@@ -1,29 +1,73 @@
-# Tornado WebSocket Project
+# WebSocket Comparison Project
 
-This project utilizes Tornado, a Python web framework and asynchronous networking library, to establish a WebSocket connection between a client and a server. The goal is to measure latency, throughput, and collect hardware details during data exchange.
+This project aims to compare WebSocket implementations in two Python frameworks: Tornado and Websockets. The evaluation includes measuring latency, throughput, scalability, and collecting hardware details during data exchange.
 
-## Files
+## Prerequisites
 
-### 1. `tornado_client.py`
+1. Clone the repository: `git clone https://github.com/Rectiras/repo-websockets.git`
+2. Navigate to the project directory: `cd repo-websockets`
+3. Ensure Python is installed on your system.
+4. Install project dependencies: `pip install -r requirements.txt`
 
-This file represents the Tornado WebSocket client. It sends messages to the server and generates an Excel file called tornado.xlsx that contains real-time data, including latency, throughput, and hardware details.
+## Tornado WebSocket Implementation
 
-### 2. `tornado_server.py`
+### Files for Tornado
 
-This file contains the Tornado WebSocket server. It listens for incoming messages from the client, simulates real-time data, and calculates latency and throughput.
+1. `tornado_client.py`: Tornado WebSocket client. Sends messages to the server and generates an Excel file named tornado.xlsx containing real-time data, including latency, throughput, and hardware details.
 
-### Prerequisites
+2. `tornado_server.py`: Tornado WebSocket server. Listens for incoming messages from the client, simulates real-time data, and calculates latency and throughput.
 
-1. `git clone https://github.com/Rectiras/repo-websockets.git`
-2. `cd repo-websockets`
-3. Make sure Python installed on your system.
-4. `pip install -r requirements.txt`
+### Running the Tornado WebSocket Project
 
-## Running the Project
+1. Start the server: `python tornado_server.py`
+2. Launch the client: `python tornado_client.py`
 
-1. `python tornado_server.py`
-2. `python tornado_client.py`
+### Using Tornado WebSockets
 
-### Using the Tornado Websockets
+- The client can input messages and receive responses from the server with fixed JSON data (modifiable in `tornado_server.py`).
+- To generate the Excel file with a summary, clients must input `exit`.
 
-1. Client can input messages and see responses from the server with a fixed json data which can be changed in tornado_server.py . Clients must input `exit` in order to generate the Excel file which provides the summary.
+## Websockets WebSocket Implementation
+
+### Files for Websockets
+
+1. `websockets_client.py`: Websockets WebSocket client. Sends messages to the server and generates an Excel file named websockets.xlsx containing real-time data, including latency, throughput, and hardware details.
+
+2. `websockets_server.py`: Websockets WebSocket server. Listens for incoming messages from the client, simulates real-time data, and calculates latency and throughput.
+
+### Running the Websockets WebSocket Project
+
+1. Start the server: `python websockets_server.py`
+2. Launch the client: `python websockets_client.py`
+
+### Using Websockets
+
+- Similar to Tornado, the client can input messages and receive responses from the server with fixed JSON data (modifiable in `websockets_server.py`).
+- To generate the Excel file with a summary, clients must input `exit`.
+
+### Results
+
+1. **Latency Comparison**
+   - Tornado Average Latency: 0.000965
+   - Websockets Average Latency: 0.000876
+
+   - Websockets Performed 10% better than Tornado
+
+2. **Throughput Comparison**
+   - Tornado Throughput: 30,2804844366243
+   - Websockets Throughput: 30,3015221337059
+
+   - Almost Identical Throughput with Websockets performing slighly better than Tornado.
+
+3. **Scalability**
+   - Tornado:
+   - - Well-suited for handling concurrent connections
+   - - May require fine-tuning for specific scalability requirements
+
+   - Websockets:
+   - - High concurrency support
+   - - Asynchronous architecture for efficiency
+
+### Conclusion
+
+Based on the comparison, Websockets demonstrated approximately 10% better latency and nearly identical throughput compared to Tornado. While both libraries have their strengths, Websockets is recommended for this scenario due to superior latency performance.
