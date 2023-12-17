@@ -24,4 +24,4 @@ This file contains the Tornado WebSocket server. It listens for incoming message
 
 ### Using the Tornado Websockets
 
-1. Client can input messages and see responses from the server with a fixed json data which can be changed in tornado_server.py . Client must input "exit" in order to generate the Excel file which provides the summary
+1. Client can input messages and see responses from the server with a fixed json data which can be changed in tornado_server.py . Client must input `exit` in order to generate the Excel file which provides the summary.
